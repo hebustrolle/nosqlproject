@@ -1,0 +1,20 @@
+</html>
+<body>
+  <% panierenvoie.forEach(function(panierenvoie, index) { %>
+    <p> <%= panierenvoie.marque %></p>
+    <p> <%= panierenvoie.prix %></p>
+    <p> <%= panierenvoie.type %></p>
+    <p> <%= panierenvoie.nom %></p>
+    <% }); %>
+
+    <form method="post" action="/commandevalide">
+      <input type="hidden" name="panier" value="<%= panierenvoie[0]%>">
+      <input type="hidden" name="panierprix" value=" <%= panierenvoie.prix  %> "/>
+      <input type="hidden" name="paniertype" value=" <%= panierenvoie.type  %> "/>
+      <input type="hidden" name="paniernom" value=" <%= panierenvoie.nom  %> "/>
+      <button type="submit">Payer la commande</button>
+    </form>
+  </body>
+
+
+  </html>

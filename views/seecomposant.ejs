@@ -1,0 +1,14 @@
+</html>
+<body>
+<p>Voir les composants</p>
+</body>
+<p><%= resultat.marque %></p>
+
+<% resultat.forEach(function(resultat) { %>
+      <li><%= resultat.marque %> - <%= resultat.type  %> - <%= resultat.prix  %> €</li><form method="post" action="/ajouterpanier"><input type="hidden" name="marque" value=" <%= resultat.marque  %> "/><input type="hidden" name="prix" value=" <%= resultat.prix  %> "/><input type="hidden" name="type" value=" <%= resultat.type  %> "/>
+        <input type="hidden" name="nom" value=" <%= resultat.nom  %> "/><button type="submit">Ajouter panier</button></form>
+        <form method="post" action="/ajouternote"><label>Note</label><input type="hidden" name="id" value="<%=resultat._id%>"/><input type="number" name="note"/><button type="submit">Noter</button></form>
+        <form method="post" action="/ajoutercommentaire"><label>Commentaire</label><input type="hidden" name="id_comm" value="<%=resultat._id%>"/><textarea type="text" name="comm"></textarea><button type="submit">Commenter</button></form>
+
+  <% }); %>
+</html>
