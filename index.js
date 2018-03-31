@@ -13,6 +13,10 @@ app.get('/Acceuil', function (req, res) {
 });
 
 
+app.get('/', function (req, res) {
+  res.render('acceuil.ejs');
+});
+
 app.get('/connexion', function (req, res) {
   res.render('connexion.ejs');
 });
